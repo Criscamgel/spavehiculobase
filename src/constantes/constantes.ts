@@ -1,6 +1,6 @@
 export const Constantes = {
     periodos: [48, 60, 72, 84],
-    minimo: 2000000,
+    minimo: 20000000,
     valorMinIngreso: 1200000,
     tasa: 0.0115,
     constanteSeguro: 1200 / 1000000,

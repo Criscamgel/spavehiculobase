@@ -35,7 +35,7 @@ export class PasounoComponent {
 
   crearFormulario() {
     this.primero = this.formBuilder.group({
-      monto: ['', [Validators.required, Validators.min(20000000)]],
+      monto: ['', [Validators.required, Validators.min(this.const.minimo)]],
       periodo: ['', Validators.required],
       cuota: [0, Validators.required]
     });
