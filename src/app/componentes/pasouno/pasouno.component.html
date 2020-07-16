@@ -55,7 +55,8 @@
             mat-button
             color="primary"
             class="btnPrimario" 
-            [disabled]="primero.invalid" 
+            [disabled]="primero.invalid"
+            (click)="consultaCentrales.primeroCompleto = true" 
             matStepperNext>CONTINUAR <mat-icon>arrow_right_icon</mat-icon></button>
         </div>
     </form>

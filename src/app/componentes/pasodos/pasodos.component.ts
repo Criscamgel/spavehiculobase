@@ -29,6 +29,7 @@ export class PasodosComponent {
 
   constructor(public formBuilder: FormBuilder, public consultaCentrales: ConsultaCentralesService, public respuestaCalculadora: RespuestaCalculadoraService) {
     this.crearFormulario();
+    this.statusCambia();
     this.aceptarTyc();
    }
 
@@ -93,6 +94,12 @@ export class PasodosComponent {
     this.respuestaCalculadora.observableAceptarTyc.subscribe(value => {
       this.segundo.controls['autorizaConsultaCentrales'].setValue(value);
     })
+  }
+
+  statusCambia() {
+    this.segundo.statusChanges.subscribe(val => {
+      val === 'VALID' ? this.consultaCentrales.segundoCompleto = true : this.consultaCentrales.segundoCompleto = false;
+    });
   }
 
 }

@@ -30,6 +30,7 @@ export class PasounoComponent {
 
   constructor( public formBuilder: FormBuilder, public consultaCentrales: ConsultaCentralesService, public respuestaCalculadora: RespuestaCalculadoraService ) {
     this.crearFormulario();
+    this.statusCambia();
    }
 
   crearFormulario() {
@@ -48,6 +49,12 @@ export class PasounoComponent {
     });
     this.primero.controls['periodo'].valueChanges.subscribe( () => {
         this.primero.controls['cuota'].setValue(this.respuestaCalculadora.calcularCuota(this.primero.get('periodo').value, this.primero.get('monto').value));
+    });
+  }
+
+  statusCambia() {
+    this.primero.statusChanges.subscribe(val => {
+      val === 'VALID' ? this.consultaCentrales.primeroCompleto = true : this.consultaCentrales.primeroCompleto = false;
     });
   }
 

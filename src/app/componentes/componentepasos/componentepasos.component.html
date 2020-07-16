@@ -1,6 +1,6 @@
 <div class="contenedor">
 <div class=""></div>
-<mat-horizontal-stepper [disableRipple]="true" linear="true">
+<mat-horizontal-stepper [disableRipple]="true" linear>
 
     <ng-template matStepperIcon="done" let-index="index">
         {{index+1}}
@@ -9,15 +9,15 @@
         {{index+1}}
     </ng-template>
 
-    <mat-step label="Calcula tu cuota" class="pasoUno" [editable]="editable">
+    <mat-step label="Calcula tu cuota" class="pasoUno" [editable]="!consultaCentrales.segundoCompleto" [completed]="consultaCentrales.primeroCompleto">
         <app-pasouno></app-pasouno>
     </mat-step>
 
-    <mat-step label="Ingresa tus datos" class="pasoDos" [editable]="editable">
+    <mat-step label="Ingresa tus datos" class="pasoDos" [editable]="!consultaCentrales.segundoCompleto" [completed]="consultaCentrales.segundoCompleto">
         <app-pasodos></app-pasodos>
     </mat-step>
 
-    <mat-step label="Respuesta Inmediata" class="pasoTres" [editable]="editable">
+    <mat-step label="Respuesta Inmediata" class="pasoTres">
         <app-pasotres></app-pasotres>
     </mat-step>
 </mat-horizontal-stepper>

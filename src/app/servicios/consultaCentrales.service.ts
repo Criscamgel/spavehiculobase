@@ -36,6 +36,10 @@ export class ConsultaCentralesService {
   env = environment;
   const = Constantes;
 
+  /* Estados Completos Steps */
+  primeroCompleto = false;
+  segundoCompleto = false;
+
   observableAutenticar: any;
   autenticar: any;
 

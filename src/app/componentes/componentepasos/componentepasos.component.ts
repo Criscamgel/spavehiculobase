@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultaCentralesService } from 'src/app/servicios/consultaCentrales.service';
 
 @Component({
   selector: 'app-componentepasos',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentepasosComponent implements OnInit {
 
-  constructor() { }
+  constructor(public consultaCentrales: ConsultaCentralesService) { }
 
   ngOnInit() {
   }

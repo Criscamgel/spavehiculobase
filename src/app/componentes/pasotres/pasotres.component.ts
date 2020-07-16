@@ -52,7 +52,6 @@ export class PasotresComponent {
   
       this.consultaCentrales.respuesta(this.consultaCentrales.contactoCentrales).subscribe((res: any) => {
         this.resultado = res.IdResultado;
-        console.log(this.resultado);
       });
 
     }
