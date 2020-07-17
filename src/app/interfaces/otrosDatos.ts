@@ -2,5 +2,7 @@ export interface OtrosDatos {
     AutorizaConsultaCentrales: Boolean;
     AutorizaMareigua?: Boolean;
     ValorFinanciar: Number;
-    IdentificacionVendedor?: Number;
+    UsuarioRadica: String;
+    ConcesionarioRadicacion: Number;
+    IdentificacionVendedor: Number;
 }

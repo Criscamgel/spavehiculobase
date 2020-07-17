@@ -49,6 +49,8 @@ export class PasotresComponent {
             this.consultaCentrales.contactoCentrales.DatosFinancieros.ActividadIndependiente = 3;
         }
     }
+
+    this.consultaCentrales.contactoCentrales.OtrosDatos
   
       this.consultaCentrales.respuesta(this.consultaCentrales.contactoCentrales).subscribe((res: any) => {
         this.resultado = res.IdResultado;
