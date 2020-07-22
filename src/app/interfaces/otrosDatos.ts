@@ -5,4 +5,5 @@ export interface OtrosDatos {
     UsuarioRadica: String;
     ConcesionarioRadicacion: Number;
     IdentificacionVendedor: Number;
+    Marca: Number;
 }

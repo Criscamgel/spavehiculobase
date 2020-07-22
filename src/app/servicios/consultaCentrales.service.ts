@@ -29,7 +29,8 @@ export class ConsultaCentralesService {
       ValorFinanciar: null,
       UsuarioRadica: 'k.maldonadoo',
       ConcesionarioRadicacion: 99,
-      IdentificacionVendedor: 15
+      IdentificacionVendedor: 15,
+      Marca: 14
     }
   };
 
