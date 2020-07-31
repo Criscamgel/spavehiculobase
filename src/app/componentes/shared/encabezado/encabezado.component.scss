@@ -4,22 +4,58 @@
 .contenedor{
     display: grid;
     grid-template-columns: $margenContenido auto $margenContenido;
-    border-bottom: 3px solid $colorPrimario;
     background-color: white;
     @include tabletLaptop(){
         grid-template-columns: $margenContenido auto 55%;
     }
     .contLogo{
-        text-align: center;
         padding: 10px 0;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
         @include tabletLaptop(){
             text-align: left;
         }
         img{
-            width: 30%;
+            width: 50%;
             @include tabletLaptop(){
                 width: 25%;
             }
         }
+    }
+}
+
+.contDer{
+    align-self: center;
+    justify-self: center;
+    text-align: right;
+    @include tabletLaptop(){
+        display: none;
+    }
+}
+.contIzq{
+    align-self: center;
+    justify-self: center;
+    text-align: left;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    img{
+      display: none;
+      @include tabletLaptop(){
+        align-self: center;
+        justify-self: right;
+        display: block;
+        }  
+    }
+}
+
+.contLogDer{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin-right: 30px;
+    img{
+        width: 90%;
     }
 }

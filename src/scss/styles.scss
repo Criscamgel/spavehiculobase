@@ -27,7 +27,7 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 }
 
 .mat-horizontal-stepper-header .mat-step-icon-selected{
-    background-color: $colorPrimario !important;
+    background-color: $colorCliente !important;
 }
 
 .mat-step-icon{
@@ -36,10 +36,10 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 
 /* Botones */
 .mat-button.mat-primary[disabled]{
-    background-color: $colorTerciario !important;
+    background-color: $colorCliente !important;
 }
 .mat-button.mat-primary{
-    background-color: $colorPrimario;
+    background-color: $colorCliente;
     color: white !important;
 }
 
@@ -209,4 +209,10 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 .mat-form-field-appearance-outline .mat-form-field-outline{
     background-color: white;
     border-radius: 3px;
+}
+
+.splash{
+    img{
+        max-width: 134px;
+    }
 }

@@ -7,7 +7,7 @@
     padding: 10px 0;
     color: white;
     @include tabletLaptop(){
-        grid-template-columns: $margenFooter auto 55%;
+        grid-template-columns: 5% auto 55%;
     }
     p{
         font-size: 8px;

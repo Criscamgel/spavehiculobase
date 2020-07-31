@@ -60,7 +60,7 @@ export class PasotresComponent {
 }
 
 gotoReferrer() {
-  window.location.href = this.consultaCentrales.linkOrigen;
+  window.location.href = 'https://www.jaguar.co/';
 }
 
 }
