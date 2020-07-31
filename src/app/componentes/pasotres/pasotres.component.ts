@@ -60,7 +60,7 @@ export class PasotresComponent {
 }
 
 gotoReferrer() {
-  window.location.href = 'https://www.jaguar.co/';
+  window.location.href = this.const.urlCliente;
 }
 
 }
