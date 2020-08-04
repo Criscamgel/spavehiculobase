@@ -36,6 +36,7 @@ export class PasounoComponent {
   crearFormulario() {
     this.primero = this.formBuilder.group({
       monto: ['', [Validators.required, Validators.min(this.const.minimo)]],
+      precio: ['', [Validators.required, Validators.min(this.const.precioMinimo)]],
       periodo: ['', Validators.required],
       cuota: [0, Validators.required]
     });
@@ -47,6 +48,11 @@ export class PasounoComponent {
         this.primero.controls['cuota'].setValue(this.respuestaCalculadora.calcularCuota(this.primero.get('periodo').value, this.primero.get('monto').value));
       }
     });
+
+    this.primero.controls['precio'].valueChanges.subscribe( value => {
+      this.consultaCentrales.contactoCentrales.DatosBasicos.ValorVehiculo = value;
+    });
+
     this.primero.controls['periodo'].valueChanges.subscribe( () => {
         this.primero.controls['cuota'].setValue(this.respuestaCalculadora.calcularCuota(this.primero.get('periodo').value, this.primero.get('monto').value));
     });
@@ -60,6 +66,9 @@ export class PasounoComponent {
 
   get montoNoValido() {
     return this.primero.get('monto').invalid && this.primero.get('monto').touched;
+  }
+  get precioNoValido() {
+    return this.primero.get('precio').invalid && this.primero.get('precio').touched;
   }
 
 }

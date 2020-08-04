@@ -15,6 +15,7 @@ export class ConsultaCentralesService {
       TipoDocumento: null,
       NumeroDocumento: null,
       Nombre: null,
+      ValorVehiculo: null,
       Celular: null,
       CorreoPersonal: null
     },
@@ -83,6 +84,7 @@ export class ConsultaCentralesService {
   }
 
   respuesta( contacto: any ) {
+    console.log(contacto);
     contacto = JSON.stringify(contacto);
     return this.http.post(`${this.env.urlV}`, contacto, this.optionsVi);
   }

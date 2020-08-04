@@ -210,3 +210,7 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
     background-color: white;
     border-radius: 3px;
 }
+
+select.mat-input-element:not(:disabled) {
+    font-size: 12px !important;
+}
