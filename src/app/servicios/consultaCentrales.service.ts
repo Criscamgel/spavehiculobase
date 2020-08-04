@@ -84,7 +84,6 @@ export class ConsultaCentralesService {
   }
 
   respuesta( contacto: any ) {
-    console.log(contacto);
     contacto = JSON.stringify(contacto);
     return this.http.post(`${this.env.urlV}`, contacto, this.optionsVi);
   }
