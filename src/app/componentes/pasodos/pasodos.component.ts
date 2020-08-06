@@ -81,6 +81,9 @@ export class PasodosComponent {
   get ingresoMensualNoValido() {
     return this.segundo.get('ingresoMensual').invalid && this.segundo.get('ingresoMensual').touched;
   }
+  get minimoingresoMensualNoValido() {
+    return this.segundo.controls['tipoDocumento'].value < this.const.valorMinIngreso;
+  }
 
   patternCoincide(event, value) {
     const pattern =  new RegExp(value);

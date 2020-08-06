@@ -109,6 +109,7 @@
               required
               >
               <mat-error *ngIf="ingresoMensualNoValido">Diligencia tus ingresos mensuales</mat-error>
+              <mat-error *ngIf="minimoingresoMensualNoValido">Diligencia mínimo $ {{ this.const.valorMinIngreso | number:'1.0':'es' }}</mat-error>
             </mat-form-field>
 
             <div class="santanderConsumer">
