@@ -1,4 +1,5 @@
 @import '../scss/variables';
+@import '../scss/mixins';
 
 .contenedor{
     grid-row: 1;
@@ -9,6 +10,9 @@
     background-attachment: fixed;
     background-size: cover;
     min-height: 100vh;
+    @include Asmall(){
+        background-image: none;
+    }
 }
 
 .superContenedor{
