@@ -6,8 +6,8 @@
 
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-red);
-$my-app-accent: mat-palette($mat-red, A400, A400, A400);
+$my-app-primary: mat-palette($mat-green);
+$my-app-accent: mat-palette($mat-green, A400, A400, A400);
 $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 
 @include angular-material-theme($my-app-theme);
@@ -32,6 +32,10 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 
 .mat-step-icon{
     background-color: $colorSecundario !important;
+}
+
+span.ng-star-inserted{
+    color: white;
 }
 
 /* Botones */
