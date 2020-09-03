@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: $margenFooter auto $margenFooter;
     padding: 10px 0;
-    color: white;
+    color: black;
     @include tabletLaptop(){
         grid-template-columns: 5% auto 55%;
     }
