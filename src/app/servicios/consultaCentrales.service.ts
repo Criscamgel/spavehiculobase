@@ -28,9 +28,9 @@ export class ConsultaCentralesService {
       AutorizaConsultaCentrales: false,
       AutorizaMareigua: false,
       ValorFinanciar: null,
-      UsuarioRadica: 'k.maldonadoo',
-      ConcesionarioRadicacion: 99,
-      IdentificacionVendedor: 15,
+      UsuarioRadica: 'd.avendanom',
+      ConcesionarioRadicacion: 179,
+      IdentificacionVendedor: 999,
       Marca: 14
     }
   };
