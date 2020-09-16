@@ -7,19 +7,29 @@
     border-bottom: 3px solid $colorPrimario;
     background-color: white;
     @include tabletLaptop(){
-        grid-template-columns: $margenContenido auto 55%;
+        grid-template-columns: 35% 30% 35%;
     }
     .contLogo{
-        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
         padding: 10px 0;
-        @include tabletLaptop(){
-            text-align: left;
-        }
-        img{
-            width: 30%;
-            @include tabletLaptop(){
-                width: 25%;
+        .contLogoVariable{
+            align-self: center;
+            justify-self: left;
+            img{
+                width: 60%;
             }
+        }
+        .contLogoSalon{
+            align-self: center;
+            justify-self: right;
+            img{
+                width: 40%;
+            }
+        }
+        
+        .salon{
+            text-align: right;
         }
     }
 }

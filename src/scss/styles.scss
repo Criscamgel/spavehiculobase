@@ -27,7 +27,7 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 }
 
 .mat-horizontal-stepper-header .mat-step-icon-selected{
-    background-color: $colorPrimario !important;
+    background-color: #378FFD !important;
 }
 
 .mat-step-icon{
@@ -101,7 +101,7 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
     grid-row: 1 !important;
     margin: 0 -40px !important;
     @include tabletLaptop(){
-        margin: 0 -70px !important;
+        margin: 0 -50px !important;
     }
   }
 
@@ -171,14 +171,14 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 .piepaso{
     display: grid;
     grid-template-columns: 50% auto;
-    @include tabletLaptop(){
+    /* @include tabletLaptop(){
         grid-template-columns: 75% auto;
-    }
+    } */
     button{
-        grid-column: 2;
-        @include Asmall(){
+        /* grid-column: 2;
+        @include Asmall(){ */
             grid-column: 1/3;
-        }
+        /* } */
     }
 }
 

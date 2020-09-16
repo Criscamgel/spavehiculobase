@@ -5,6 +5,6 @@
     display: grid;
     grid-template-columns: $margenContenido auto $margenContenido;
     @include tabletLaptop(){
-        grid-template-columns: $margenContenido auto 55%;
+        grid-template-columns: 35% 30% 35%;
     }
 }

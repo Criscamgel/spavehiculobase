@@ -27,8 +27,7 @@ export const Constantes = {
         {value: 3, name: 'NIT'}
     ],
 
-    username: "TuCarro",
-    
+    username: "TuCarro",    
     password: "tuC@rr02019",
 
     tyc: {
@@ -48,5 +47,16 @@ export const Constantes = {
     cliente: './assets/img/consumerFinance.png',
     santander: './assets/img/consumerFinance.png',
     santanderGris: './assets/img/consumerFinanceGris.png',
-    santanderBlanco: './assets/img/consumerFinanceBlanco.png'
+    santanderBlanco: './assets/img/consumerFinanceBlanco.png',
+    /* logos clientes */
+    logos: [
+        {nombre: 'bmw', path: './assets/img/logos/bmw.png'},
+        {nombre: 'volvo', path: './assets/img/logos/volvo.png'},
+        {nombre: 'feria', path: './assets/img/logos/mercadolibre.png'},
+        {nombre: 'reserva', path: './assets/img/logos/mercadolibre.png'},
+        {nombre: 'salonVirtual', path: './assets/img/salonvirtual.png'}
+    ],
+    colores:[
+        {}
+    ]
 }

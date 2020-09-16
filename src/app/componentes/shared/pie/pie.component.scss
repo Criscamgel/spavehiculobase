@@ -5,12 +5,12 @@
     display: grid;
     grid-template-columns: $margenFooter auto $margenFooter;
     padding: 10px 0;
-    color: white;
-    @include Asmall(){
+    color: black;
+    /* @include Asmall(){
         color: black;
-    }
+    } */
     @include tabletLaptop(){
-        grid-template-columns: $margenFooter auto 55%;
+        grid-template-columns: 35% 30% 35%;
     }
     p{
         font-size: 8px;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Constantes } from 'src/constantes/constantes';
+import { MultidominioService } from 'src/app/servicios/multidominio.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -10,7 +11,7 @@ export class EncabezadoComponent implements OnInit {
 
   const = Constantes;
 
-  constructor() { }
+  constructor(public multiDominio: MultidominioService) { }
 
   ngOnInit() {
   }

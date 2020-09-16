@@ -1,7 +1,12 @@
 <div class="contenedor">
     <div class="grid"></div>
     <div class="contLogo">
-        <img [src]="const.cliente" alt="">
+        <div class="contLogoVariable">
+            <img [src]="multiDominio.parametro ? multiDominio.logoPath : const.logos[2].path" alt="">
+        </div>
+        <div class="contLogoSalon">
+            <img class="salon" [src]="const.logos[4].path" alt="">
+        </div>
     </div>
     <div class="grid"></div>
 </div>

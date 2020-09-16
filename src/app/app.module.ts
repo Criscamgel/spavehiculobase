@@ -19,6 +19,9 @@ import { MaterialModule } from './material/material.module';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { ModalTycComponent } from './componentes/modal-tyc/modal-tyc.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InicialComponent } from './componentes/inicial/inicial.component';
+import { GaugeChartModule } from 'angular-gauge-chart';
+import { SpeedometerComponent } from './componentes/speedometer/speedometer.component';
 
 registerLocaleData(localeEs, 'es');
 
@@ -31,7 +34,9 @@ registerLocaleData(localeEs, 'es');
     PasotresComponent,
     EncabezadoComponent,
     PieComponent,
-    ModalTycComponent
+    ModalTycComponent,
+    InicialComponent,
+    SpeedometerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,8 @@ registerLocaleData(localeEs, 'es');
     CurrencyMaskModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    GaugeChartModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent]
