@@ -13,13 +13,12 @@ export class MultidominioService {
   logoPath: any;
   logoMarca: any;
   private domain: Domain = new Domain();
-  private domains: Domains[] = [{name: 'feria', title: 'Santander - Feria de Vehiculo'},
-                                {name: 'marca', title: 'Santander - Feria de Vehiculo'},
-                                {name: 'reserva', title: 'Santander - Feria de Vehiculo'}];
+  private domains: Domains[] = [{name: 'feria', title: 'Santander - Feria de Vehiculo'}];
   parametro: any;
 
   flagFeria = false;
   flagReserva = false;
+  flagMarca = false;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -48,21 +47,22 @@ export class MultidominioService {
     }
     this.route.queryParams.subscribe((data: any) => {
       if (data.feria) {
-        this.flagFeria = true;
         this.parametro = 'feria';
+        this.flagFeria = true;
         this.urlAssetMarca(this.parametro, 'logos');
         this.logoPath = this.path;
       }
 
       if (data.marca) {
        this.parametro = data.marca;
+       this.flagMarca = true;
        this.urlAssetMarca(this.parametro, 'logos');
        this.logoPath = this.path;
       }
 
       if (data.reserva) {
-        this.flagReserva = true;
         this.parametro = 'reserva';
+        this.flagReserva = true;
         this.urlAssetMarca(this.parametro, 'logos');
         this.logoPath = this.path;
        }
