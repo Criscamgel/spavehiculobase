@@ -9,10 +9,11 @@ export class RespuestaCalculadoraService {
 
   mostrarModal = false;
   aceptartyc: any = false;
-
+  valorCuota: any = 0;
   observableAceptarTyc: any;
+  periodo: any;
 
-  constructor() { 
+  constructor() {
     this.observableAceptarTyc = new BehaviorSubject<number>(this.aceptartyc);
    }
 
@@ -22,7 +23,7 @@ export class RespuestaCalculadoraService {
     const valorCuota = this.functionPago(nmv, periodo, monto);
     const seguroCuota = this.functionPago(nmv, periodo, seguroTotal);
 
-    return valorCuota + seguroCuota;
+    this.valorCuota = valorCuota + seguroCuota;
   }
 
   functionPago(nmv: number, periodo: number, monto: number) {

@@ -5,6 +5,13 @@
     display: grid;
     grid-template-columns: $margenContenido auto $margenContenido;
     @include tabletLaptop(){
-        grid-template-columns: 35% 30% 35%;
+        grid-template-columns: 32% 36% 32%;
     }
+}
+
+.contTitulo {
+    text-align: center;
+    color: #888888;
+    margin: 15px 0px 0px 0px;
+    font-size: 13px;
 }

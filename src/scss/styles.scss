@@ -6,8 +6,8 @@
 
 @include mat-core();
 
-$my-app-primary: mat-palette($mat-red);
-$my-app-accent: mat-palette($mat-red, A400, A400, A400);
+$my-app-primary: mat-palette($mat-blue);
+$my-app-accent: mat-palette($mat-blue, A400, A400, A400);
 $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 
 @include angular-material-theme($my-app-theme);
@@ -225,3 +225,11 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 select.mat-input-element:not(:disabled) {
     font-size: 12px !important;
 }
+
+.gauge-chart > div {
+    z-index: 1;
+}
+
+.center{
+    text-align: center;
+  }

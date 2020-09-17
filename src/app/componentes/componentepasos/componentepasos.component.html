@@ -1,25 +1,36 @@
 <div class="contenedor">
 <div class=""></div>
-<mat-horizontal-stepper [disableRipple]="true" linear>
+<div class="contenido">
+    <div class="contTitulo">
+        <div class="feria">
+            <h3>
+                Bienvenido, estamos listos para ayudarte a alcanzar tu próximo vehiculo 
+            </h3>
+        </div>
+    </div>
 
-    <ng-template matStepperIcon="done" let-index="index">
-        {{index+1}}
-    </ng-template>
-    <ng-template matStepperIcon="edit" let-index="index">
-        {{index+1}}
-    </ng-template>
+    <mat-horizontal-stepper [disableRipple]="true" linear>
 
-    <mat-step label="Calcula tu cuota" class="pasoUno" [editable]="!consultaCentrales.segundoCompleto" [completed]="consultaCentrales.primeroCompleto">
-        <app-pasouno></app-pasouno>
-    </mat-step>
+        <ng-template matStepperIcon="done" let-index="index">
+            {{index+1}}
+        </ng-template>
+        <ng-template matStepperIcon="edit" let-index="index">
+            {{index+1}}
+        </ng-template>
+    
+        <mat-step label="Calcula tu cuota" class="pasoUno" [editable]="!consultaCentrales.segundoCompleto" [completed]="consultaCentrales.primeroCompleto">
+            <app-pasouno></app-pasouno>
+        </mat-step>
+    
+        <mat-step label="Ingresa tus datos" class="pasoDos" [editable]="!consultaCentrales.segundoCompleto" [completed]="consultaCentrales.segundoCompleto">
+            <app-pasodos></app-pasodos>
+        </mat-step>
+    
+        <mat-step label="Respuesta Inmediata" class="pasoTres">
+            <app-pasotres></app-pasotres>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>
 
-    <mat-step label="Ingresa tus datos" class="pasoDos" [editable]="!consultaCentrales.segundoCompleto" [completed]="consultaCentrales.segundoCompleto">
-        <app-pasodos></app-pasodos>
-    </mat-step>
-
-    <mat-step label="Respuesta Inmediata" class="pasoTres">
-        <app-pasotres></app-pasotres>
-    </mat-step>
-</mat-horizontal-stepper>
 <div class=""></div>
 </div>

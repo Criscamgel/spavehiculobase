@@ -43,19 +43,19 @@ div#check {
     color:rgb(138, 0, 0);
 }
 
-.contCampoDos{
+/*.contCampoDos{
     
-    @include tabletLaptop(){
+     @include tabletLaptop(){
         display: grid;
         grid-template-columns: repeat(2, auto);
         grid-column-gap: 5px;
-    }
-}
+    } 
+}*/
 
 .santanderConsumer{
     @include tabletLaptop(){
         display: grid;
-        grid-template-columns: 25% 65%;
+        /* grid-template-columns: 25% 65%; */
         text-align: justify;
         grid-column-gap: 35px;
 

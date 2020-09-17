@@ -7,7 +7,7 @@
     border-bottom: 3px solid $colorPrimario;
     background-color: white;
     @include tabletLaptop(){
-        grid-template-columns: 35% 30% 35%;
+        grid-template-columns: 32% 36% 32%
     }
     .contLogo{
         display: grid;
@@ -23,6 +23,7 @@
         .contLogoSalon{
             align-self: center;
             justify-self: right;
+            text-align: right;
             img{
                 width: 40%;
             }

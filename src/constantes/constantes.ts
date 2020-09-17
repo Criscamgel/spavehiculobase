@@ -1,7 +1,12 @@
 const nombreCliente = "Santander Consumer"
 
 export const Constantes = {
-    periodos: [48, 60, 72, 84],
+    periodos: [
+        {value: 48, name: 'cuatroOcho'},
+        {value: 60, name: 'seisCero'},
+        {value: 72, name: 'sieteDos'},
+        {value: 84, name: 'ochoCuatro'}
+    ],
     minimo: 20000000,
     precioMinimo: 40000000,
     valorMinIngreso: 1200000,
@@ -48,15 +53,18 @@ export const Constantes = {
     santander: './assets/img/consumerFinance.png',
     santanderGris: './assets/img/consumerFinanceGris.png',
     santanderBlanco: './assets/img/consumerFinanceBlanco.png',
+    medidor: './assets/img/medidor.svg',
+    mercadolibre: './assets/img/logos/mercadolibre.png',
+    salonVirtual: './assets/img/salonvirtual.png',
     /* logos clientes */
     logos: [
         {nombre: 'bmw', path: './assets/img/logos/bmw.png'},
         {nombre: 'volvo', path: './assets/img/logos/volvo.png'},
-        {nombre: 'feria', path: './assets/img/logos/mercadolibre.png'},
-        {nombre: 'reserva', path: './assets/img/logos/mercadolibre.png'},
-        {nombre: 'salonVirtual', path: './assets/img/salonvirtual.png'}
-    ],
-    colores:[
-        {}
+        {nombre: 'dodge', path: './assets/img/logos/dodge.png'},
+        {nombre: 'fiat', path: './assets/img/logos/fiat.png'},
+        {nombre: 'ram', path: './assets/img/logos/ram.png'},
+        {nombre: 'peugeot', path: './assets/img/logos/peugeot.png'},
+        {nombre: 'jaguar', path: './assets/img/logos/jaguar.png'},
+        {nombre: 'landRover', path: './assets/img/logos/landRover.png'}
     ]
 }

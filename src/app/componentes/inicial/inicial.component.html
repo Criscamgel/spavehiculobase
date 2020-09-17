@@ -1,9 +1,9 @@
 <div class="superContenedor">
     <div *ngIf="splash" class="splash" [@animationFadeOut]="splash">
-        <img [src]="const.logos[2].path" alt="">
+        <img [src]="const.mercadolibre" alt="">
         <img [src]="const.cliente" alt="">
     </div>
-    <div class="contenedor">
+    <div *ngIf="!splash" class="contenedor" [@animationFadeOut]="!splash">
         <app-encabezado></app-encabezado>
         <app-componentepasos></app-componentepasos>
         <app-pie></app-pie>

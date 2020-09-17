@@ -28,7 +28,9 @@ export class PasounoComponent {
   const = Constantes;
   /* cuota: number = 0; */
 
-  constructor( public formBuilder: FormBuilder, public consultaCentrales: ConsultaCentralesService, public respuestaCalculadora: RespuestaCalculadoraService ) {
+  constructor( public formBuilder: FormBuilder, 
+               public consultaCentrales: ConsultaCentralesService, 
+               public respuestaCalculadora: RespuestaCalculadoraService ) {
     this.crearFormulario();
     this.statusCambia();
    }
@@ -37,24 +39,17 @@ export class PasounoComponent {
     this.primero = this.formBuilder.group({
       monto: ['', [Validators.required, Validators.min(this.const.minimo)]],
       precio: ['', [Validators.required, Validators.min(this.const.precioMinimo)]],
-      periodo: ['', Validators.required],
       cuota: [0, Validators.required]
     });
 
     /* Subcripción de Resultados */
     this.primero.controls['monto'].valueChanges.subscribe( value => {
       this.consultaCentrales.contactoCentrales.OtrosDatos.ValorFinanciar = value;
-      if (this.primero.get('periodo').value) {
-        this.primero.controls['cuota'].setValue(this.respuestaCalculadora.calcularCuota(this.primero.get('periodo').value, this.primero.get('monto').value));
-      }
+      this.respuestaCalculadora.calcularCuota(this.respuestaCalculadora.periodo, value);
     });
 
     this.primero.controls['precio'].valueChanges.subscribe( value => {
       this.consultaCentrales.contactoCentrales.DatosBasicos.ValorVehiculo = value;
-    });
-
-    this.primero.controls['periodo'].valueChanges.subscribe( () => {
-        this.primero.controls['cuota'].setValue(this.respuestaCalculadora.calcularCuota(this.primero.get('periodo').value, this.primero.get('monto').value));
     });
   }
 
