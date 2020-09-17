@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node server.js",
+    "build": "ng build --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,6 +24,7 @@
     "angular-gauge-chart": "^0.7.2",
     "angular-simple-gauge": "0.0.15",
     "classlist.js": "^1.1.20150312",
+    "express": "^4.17.1",
     "material-icons": "^0.3.1",
     "ng2-currency-mask": "^9.0.2",
     "rxjs": "~6.4.0",
@@ -51,5 +52,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "engines": {
+    "node": "~12.18.3",
+    "npm": "~6.14.6"
   }
 }
