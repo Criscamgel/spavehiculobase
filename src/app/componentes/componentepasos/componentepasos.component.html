@@ -3,8 +3,11 @@
 <div class="contenido">
     <div class="contTitulo">
         <div class="feria">
-            <h3>
-                Bienvenido, estamos listos para ayudarte a alcanzar tu próximo vehiculo 
+            <h3 *ngIf="multidominioService.flagFeria">
+                Bienvenido, estamos listos para ayudarte a alcanzar tu próximo vehículo 
+            </h3>
+            <h3 *ngIf="multidominioService.flagReserva">
+                Tienes una reserva previa, ya estas muy cerca de tu próximo vehiculo, sigue los siguientes pasos 
             </h3>
         </div>
     </div>

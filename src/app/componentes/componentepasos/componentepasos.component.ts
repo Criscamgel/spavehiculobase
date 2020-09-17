@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultaCentralesService } from 'src/app/servicios/consultaCentrales.service';
+import { MultidominioService } from 'src/app/servicios/multidominio.service';
 
 @Component({
   selector: 'app-componentepasos',
@@ -8,7 +9,7 @@ import { ConsultaCentralesService } from 'src/app/servicios/consultaCentrales.se
 })
 export class ComponentepasosComponent implements OnInit {
 
-  constructor(public consultaCentrales: ConsultaCentralesService) { }
+  constructor(public consultaCentrales: ConsultaCentralesService, public multidominioService: MultidominioService) { }
 
   ngOnInit() {
   }

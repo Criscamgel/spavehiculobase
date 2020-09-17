@@ -18,6 +18,9 @@ export class MultidominioService {
                                 {name: 'reserva', title: 'Santander - Feria de Vehiculo'}];
   parametro: any;
 
+  flagFeria = false;
+  flagReserva = false;
+
   constructor(private route: ActivatedRoute) { }
 
   public set Domain(domain: Domain) {
@@ -45,6 +48,7 @@ export class MultidominioService {
     }
     this.route.queryParams.subscribe((data: any) => {
       if (data.feria) {
+        this.flagFeria = true;
         this.parametro = 'feria';
         this.urlAssetMarca(this.parametro, 'logos');
         this.logoPath = this.path;
@@ -57,6 +61,7 @@ export class MultidominioService {
       }
 
       if (data.reserva) {
+        this.flagReserva = true;
         this.parametro = 'reserva';
         this.urlAssetMarca(this.parametro, 'logos');
         this.logoPath = this.path;
