@@ -3,11 +3,14 @@
 <div class="contenido">
     <div class="contTitulo">
         <div class="feria">
-            <h3 *ngIf="multidominioService.flagFeria && !multidominioService.flagReserva">
+            <h3 *ngIf="multidominioService.flagFeria">
                 Bienvenido, estamos listos para ayudarte a alcanzar tu próximo vehículo 
             </h3>
-            <h3 *ngIf="multidominioService.flagReserva && !multidominioService.flagFeria">
+            <h3 *ngIf="multidominioService.flagReserva">
                 Tienes una reserva previa, ya estas muy cerca de tu próximo vehiculo, sigue los siguientes pasos 
+            </h3>
+            <h3 *ngIf="multidominioService.flagMarca">
+                Estas muy cerca de tu {{ multidominioService.parametro | uppercase }}, sólo te resta llenar los sguientes pasos: 
             </h3>
         </div>
     </div>

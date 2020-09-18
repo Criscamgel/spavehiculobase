@@ -65,6 +65,7 @@ export const Constantes = {
         {nombre: 'ram', path: './assets/img/logos/ram.png'},
         {nombre: 'peugeot', path: './assets/img/logos/peugeot.png'},
         {nombre: 'jaguar', path: './assets/img/logos/jaguar.png'},
-        {nombre: 'landRover', path: './assets/img/logos/landRover.png'}
+        {nombre: 'landrover', path: './assets/img/logos/landRover.png'},
+        {nombre: 'jeep', path: './assets/img/logos/Jeep.png'}
     ]
 }

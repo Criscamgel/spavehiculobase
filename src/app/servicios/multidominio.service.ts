@@ -55,6 +55,7 @@ export class MultidominioService {
 
       if (data.marca) {
        this.parametro = data.marca;
+       console.log(this.parametro);
        this.flagMarca = true;
        this.urlAssetMarca(this.parametro, 'logos');
        this.logoPath = this.path;
