@@ -14,7 +14,8 @@ export class ConsultaCentralesService {
     DatosBasicos: {
       TipoDocumento: null,
       NumeroDocumento: null,
-      Nombre: null,
+      Nombre1: null,
+      Apellido2: null,
       ValorVehiculo: null,
       Celular: null,
       CorreoPersonal: null
@@ -31,7 +32,6 @@ export class ConsultaCentralesService {
       UsuarioRadica: 'k.maldonadoo',
       ConcesionarioRadicacion: 99,
       IdentificacionVendedor: 15,
-      Marca: 14
     }
   };
 

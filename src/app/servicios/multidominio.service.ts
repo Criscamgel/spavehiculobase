@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Domains, Domain } from 'src/app/modelos/multi-domain';
 import { ActivatedRoute } from '@angular/router';
 import { Constantes } from 'src/constantes/constantes';
+import { ConsultaCentralesService } from './consultaCentrales.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class MultidominioService {
   flagReserva = false;
   flagMarca = false;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private consultaCentrales: ConsultaCentralesService) { }
 
   public set Domain(domain: Domain) {
     this.domain = domain;
@@ -49,14 +50,15 @@ export class MultidominioService {
       if (data.feria) {
         this.parametro = 'feria';
         this.flagFeria = true;
+        this.consultaCentrales.contactoCentrales.DatosBasicos.Apellido2 = this.parametro;
         this.urlAssetMarca(this.parametro, 'logos');
         this.logoPath = this.path;
       }
 
       if (data.marca) {
        this.parametro = data.marca;
-       console.log(this.parametro);
        this.flagMarca = true;
+       this.consultaCentrales.contactoCentrales.DatosBasicos.Apellido2 = this.parametro;
        this.urlAssetMarca(this.parametro, 'logos');
        this.logoPath = this.path;
       }
@@ -64,6 +66,7 @@ export class MultidominioService {
       if (data.reserva) {
         this.parametro = 'reserva';
         this.flagReserva = true;
+        this.consultaCentrales.contactoCentrales.DatosBasicos.Apellido2 = this.parametro;
         this.urlAssetMarca(this.parametro, 'logos');
         this.logoPath = this.path;
        }

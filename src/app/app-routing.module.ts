@@ -23,7 +23,7 @@ export function matcherFunction(url: UrlSegment[]) {
   /* const pathActual = window.location.href; */
   if (url.length === 1 /* && pathActual.includes('?') */) {
     const path = url[0].path;
-    console.log('matcherFunction', url);
+    /* console.log('matcherFunction', url); */
     if (path.includes('feria') || path.includes('marca') || path.includes('reserva')) {
         url[0].path = validateUrlDomain();
         return {consumed: url};

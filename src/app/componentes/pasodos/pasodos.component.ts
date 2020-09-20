@@ -45,7 +45,7 @@ export class PasodosComponent {
       autorizaConsultaCentrales: [false, Validators.required]
     });
 
-    this.segundo.controls['nombre'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.DatosBasicos.Nombre = value);
+    this.segundo.controls['nombre'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.DatosBasicos.Nombre1 = value);
     this.segundo.controls['tipoDocumento'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.DatosBasicos.TipoDocumento = value);
     this.segundo.controls['numeroDocumento'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.DatosBasicos.NumeroDocumento = value);
     this.segundo.controls['celular'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.DatosBasicos.Celular = value);
