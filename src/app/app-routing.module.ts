@@ -10,7 +10,7 @@ const routes: Routes = [
     {path: '', redirectTo: 'feria', pathMatch: 'full'}
   ]
   },
-  { path: '**', pathMatch: 'full', redirectTo:  'feria' }
+  { path: '**', pathMatch: 'full', redirectTo:  '/' }
 ];
 
 @NgModule({

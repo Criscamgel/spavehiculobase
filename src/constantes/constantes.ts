@@ -55,7 +55,7 @@ export const Constantes = {
     santanderBlanco: './assets/img/consumerFinanceBlanco.png',
     medidor: './assets/img/medidor.svg',
     mercadolibre: './assets/img/logos/mercadolibre.png',
-    salonVirtual: './assets/img/salonvirtual.png',
+    salonVirtual: './assets/img/logos/feria.svg',
     /* logos clientes */
     logos: [
         {nombre: 'bmw', path: './assets/img/logos/bmw.png'},

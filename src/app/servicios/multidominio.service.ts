@@ -31,6 +31,59 @@ export class MultidominioService {
     return this.domain;
   }
 
+  putCodeMarca(parametro) {
+
+    switch (parametro) {
+      case 'bmw':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 1;
+      break;
+
+      case 'hyunday':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 7;
+      break;
+
+      case 'citroen':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 30;
+      break;
+
+      case 'jeep':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 9;
+      break;
+
+      case 'peugeot':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 15;
+      break;
+
+      case 'volvo':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 17;
+      break;
+
+      case 'ram':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 16;
+      break;
+
+      case 'dodge':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 4;
+      break;
+
+      case 'fiat':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 5;
+      break;
+
+      case 'jaguar':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 8;
+      break;
+
+      case 'landrover':
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 11;
+      break;
+    
+      default:
+        break;
+    }
+
+  }
+
   public scanDomain() {
     const patch = window.location.pathname.split('/').pop();
     if (patch === 'feria') {
@@ -59,6 +112,7 @@ export class MultidominioService {
        this.parametro = data.marca;
        this.flagMarca = true;
        this.consultaCentrales.contactoCentrales.DatosBasicos.Apellido2 = this.parametro;
+       this.putCodeMarca(this.parametro);
        this.urlAssetMarca(this.parametro, 'logos');
        this.logoPath = this.path;
       }
