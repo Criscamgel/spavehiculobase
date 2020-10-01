@@ -16,6 +16,8 @@ export class MultidominioService {
   private domain: Domain = new Domain();
   private domains: Domains[] = [{name: 'feria', title: 'Santander - Feria de Vehiculo'}];
   parametro: any;
+  urlVehiculo = document.referrer;
+  /* urlVehiculo = 'https://articulo.tucarro.com.co/MCO-558397266-brilliance-2020-v3-_JM#promoted-items-new=0'; */
 
   flagFeria = false;
   flagReserva = false;
@@ -85,6 +87,13 @@ export class MultidominioService {
   }
 
   public scanDomain() {
+    const regexId = this.const.REGEX_ID;
+    if (this.urlVehiculo.match(regexId)) {
+    const id = this.urlVehiculo.match(regexId);
+    const idVehiculo = `MCO${id[1]}`;
+    this.redirectBase(idVehiculo);
+    }
+
     const patch = window.location.pathname.split('/').pop();
     if (patch === 'feria') {
       sessionStorage.removeItem('domain');
@@ -124,7 +133,12 @@ export class MultidominioService {
         this.urlAssetMarca(this.parametro, 'logos');
         this.logoPath = this.path;
        }
+
     });
+  }
+  redirectBase(idVehiculo) {
+    document.location.href = `https://tucarro.santanderconsumer.co/landing/?idvehiculo=${idVehiculo}`;
+    /* document.location.href = `http://localhost:4201/?idvehiculo=${idVehiculo}`; */
   }
 
   urlAssetMarca(valor, key) {

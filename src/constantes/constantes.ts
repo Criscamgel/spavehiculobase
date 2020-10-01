@@ -17,6 +17,7 @@ export const Constantes = {
      patternNumber: "[0-9]+$",
      patternCel: "^3+[0-9]{0,10}$",
      patternMail: "^(([^<>()\[\]\\.,;:\s@]+(\.[^<>()\[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$",
+     REGEX_ID: '\/MCO-(.*?)(-|$)',
 
      ocupaciones: [
         {value: null, name: 'Tipo de ocupación'},
