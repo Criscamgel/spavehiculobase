@@ -29,9 +29,9 @@ export class ConsultaCentralesService {
       AutorizaConsultaCentrales: false,
       AutorizaMareigua: false,
       ValorFinanciar: null,
-      UsuarioRadica: 'k.maldonadoo',
+      UsuarioRadica: 'Tucarro',
       ConcesionarioRadicacion: 381,
-      IdentificacionVendedor: 15,
+      IdentificacionVendedor: 0,
     },
     DatosVehiculo: {
       Marca: null

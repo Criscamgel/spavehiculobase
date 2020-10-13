@@ -38,6 +38,7 @@ export class MultidominioService {
     switch (parametro) {
       case 'bmw':
       this.consultaCentrales.contactoCentrales.DatosVehiculo.Marca = 1;
+      this.consultaCentrales.contactoCentrales.OtrosDatos.IdentificacionVendedor = 161;
       break;
 
       case 'hyunday':
