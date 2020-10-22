@@ -10,7 +10,7 @@
         color: black;
     }
     @include tabletLaptop(){
-        grid-template-columns: $margenFooter auto 55%;
+        grid-template-columns: 5% 40% 55%;
     }
     p{
         font-size: 8px;
