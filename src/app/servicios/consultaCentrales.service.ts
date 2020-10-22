@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Constantes } from 'src/constantes/constantes';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { ScanparamsService } from './scanparams.service';
 
 @Injectable({
   providedIn: 'root'
@@ -56,12 +57,14 @@ export class ConsultaCentralesService {
   optionsVi;
   options = { headers: this.headers };
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              public scanParams: ScanparamsService) {
     this.observableAutenticar = new BehaviorSubject<number>(this.autenticar);
    }
 
   autenticando() {
 
+    this.scanParams.enriquecido = false;
     const bodyT = {
       Username: this.const.username,
       Password: this.const.password

@@ -12,7 +12,7 @@ export class RespuestaCalculadoraService {
 
   observableAceptarTyc: any;
 
-  constructor() { 
+  constructor() {
     this.observableAceptarTyc = new BehaviorSubject<number>(this.aceptartyc);
    }
 

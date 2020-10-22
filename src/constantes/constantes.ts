@@ -6,7 +6,7 @@ export const Constantes = {
     precioMinimo: 40000000,
     valorMinIngreso: 1200000,
     tasa: 0.0115,
-    constanteSeguro: 1200 / 1000000,
+    constanteSeguro: 1220 / 1000000,
      /* Regex */
      patternLetter: "^[a-zA-Z áéíóúñÁÉÍÓÚÑ]+$",
      patternNumber: "[0-9]+$",
