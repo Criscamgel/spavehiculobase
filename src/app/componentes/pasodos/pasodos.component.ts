@@ -4,6 +4,7 @@ import { Constantes } from 'src/constantes/constantes';
 import { ConsultaCentralesService } from 'src/app/servicios/consultaCentrales.service';
 import { RespuestaCalculadoraService } from 'src/app/servicios/respuestaCalculadora.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ScanparamsService } from 'src/app/servicios/scanparams.service';
 
 @Component({
   selector: 'app-pasodos',
@@ -27,7 +28,11 @@ export class PasodosComponent {
   segundo: FormGroup;
   const = Constantes;
 
-  constructor(public formBuilder: FormBuilder, public consultaCentrales: ConsultaCentralesService, public respuestaCalculadora: RespuestaCalculadoraService) {
+  constructor(public formBuilder: FormBuilder,
+              public consultaCentrales: ConsultaCentralesService,
+              public respuestaCalculadora: RespuestaCalculadoraService,
+              public scanparamsService: ScanparamsService
+              ) {
     this.crearFormulario();
     this.statusCambia();
     this.aceptarTyc();

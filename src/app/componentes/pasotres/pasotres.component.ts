@@ -3,6 +3,7 @@ import { ConsultaCentralesService } from 'src/app/servicios/consultaCentrales.se
 import { RespuestaCalculadoraService } from 'src/app/servicios/respuestaCalculadora.service';
 import { Constantes } from 'src/constantes/constantes';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { ScanparamsService } from 'src/app/servicios/scanparams.service';
 
 @Component({
   selector: 'app-pasotres',
@@ -26,7 +27,10 @@ export class PasotresComponent {
   resultado: number;
   const = Constantes;
 
-  constructor(public consultaCentrales: ConsultaCentralesService, public respuestaCalculadora: RespuestaCalculadoraService) {
+  constructor(public consultaCentrales: ConsultaCentralesService,
+              public respuestaCalculadora: RespuestaCalculadoraService,
+              public scanParams: ScanparamsService
+              ) {
     this.viabilizar();
    }
 

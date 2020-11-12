@@ -134,7 +134,7 @@
             color="primary"
             mat-button
             matStepperNext
-            (click)="consultaCentrales.autenticando()"
+            (click)="consultaCentrales.autenticando(); scanparamsService.getParam()"
             [disabled] = "segundo.invalid"
             >CONTINUAR<mat-icon>arrow_right_icon</mat-icon></button>
         </div>

@@ -7,43 +7,63 @@
     <hr>
 
     <div class="contRespuesta">
-        <div [ngSwitch]="resultado" [@animationFadeOut]="resultado">
-            <div *ngSwitchCase="2"><!-- Preaprobado -->
+        <div [@animationFadeOut]="resultado">
+            <div *ngIf="resultado == 2 && !scanParams.enriquecido"><!-- Preaprobado -->
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
                     <p class="tituloAprobado">¡Tu solicitud es viable!</p>
-                    <p class="textoRespuesta">En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar la solicitud de crédito.</p>
+                    <p class="textoRespuesta">Pronto uno de nuestros asesores se comunicará contigo para continuar la solicitud de crédito.</p>
                 </div>
             </div>
-            <div *ngSwitchCase="3"><!-- Aprobado con documentos -->
+            <div *ngIf="resultado == 2 && scanParams.enriquecido"><!-- Preaprobado -->
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
                     <p class="tituloAprobado">¡Tu solicitud es viable!</p>
-                    <p class="textoRespuesta">En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar la solicitud de crédito.</p>
+                    <p class="textoRespuesta">¡Felicitaciones! Tu crédito es viable. Estás a un click de tener carro, chatea con tu asesor personalizado en haciendo <a class="pointer whatsapp" href="https://api.whatsapp.com/send?phone=5717443592">click aquí <i class="fa fa-whatsapp" aria-hidden="true"></i></a> o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
                 </div>
             </div>
-            <div *ngSwitchCase="4"><!-- Aprobado sin documentos -->
+            <div *ngIf="resultado == 3 && !scanParams.enriquecido"><!-- Aprobado con documentos -->
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
                     <p class="tituloAprobado">¡Tu solicitud es viable!</p>
-                    <p class="textoRespuesta">En menos de 24 horas uno de nuestros asesores se comunicará contigo para continuar la solicitud de crédito.</p>
+                    <p class="textoRespuesta">Pronto uno de nuestros asesores se comunicará contigo para continuar la solicitud de crédito.</p>
                 </div>
             </div>
-            <div *ngSwitchCase="1"><!-- Negado -->
+            <div *ngIf="resultado == 3 && scanParams.enriquecido"><!-- Aprobado con documentos -->
+                <div class="contRespuesta">
+                    <img [src]="const.aprobado" alt="">
+                    <p class="tituloAprobado">¡Tu solicitud es viable!</p>
+                    <p class="textoRespuesta">¡Felicitaciones! Tu crédito es viable. Estás a un click de tener carro, chatea con tu asesor personalizado en haciendo <a class="pointer whatsapp" href="https://api.whatsapp.com/send?phone=5717443592">click aquí <i class="fa fa-whatsapp" aria-hidden="true"></i></a> o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
+                </div>
+            </div>
+            <div *ngIf="resultado == 4 && !scanParams.enriquecido"><!-- Aprobado sin documentos -->
+                <div class="contRespuesta">
+                    <img [src]="const.aprobado" alt="">
+                    <p class="tituloAprobado">Tu solicitud ya está en proceso</p>
+                    <p class="textoRespuesta">Pronto uno de nuestros asesores te llamara para acompañarte hasta que tengas tu vehículo.</p>
+                </div>
+            </div>
+            <div *ngIf="resultado == 4 && scanParams.enriquecido"><!-- Aprobado sin documentos -->
+                <div class="contRespuesta">
+                    <img [src]="const.aprobado" alt="">
+                    <p class="tituloAprobado">Tu solicitud ya está en proceso</p>
+                    <p class="textoRespuesta">Chatea con tu asesor personalizado en haciendo <a class="pointer whatsapp" href="https://api.whatsapp.com/send?phone=5717443592">click aquí <i class="fa fa-whatsapp" aria-hidden="true"></i></a> o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
+                </div>
+            </div>
+            <div *ngIf="resultado == 1"><!-- Negado -->
                 <div class="contRespuesta">
                     <img [src]="const.negado" alt="">
-                    <p class="tituloNegado">¡Tu solicitud no es viable!</p>
-                    <p class="textoRespuesta">Uno de nuestros asesores se comunicará contigo para explorar alternativas.</p>
+                    <p class="tituloNegado">¡Lo sentimos!</p>
+                    <p class="textoRespuesta">Tu solicitud no es viable en este momento.</p>
                 </div>
             </div>
-            <div *ngSwitchCase="-1"><!-- Error de sistema -->
+            <div *ngIf="resultado == -1"><!-- Error de sistema -->
                 <div class="contRespuesta">
                     <img [src]="const.negado" alt="">
-                    <p class="tituloNegado">¡Tu solicitud no es viable!</p>
-                    <p class="textoRespuesta">Uno de nuestros asesores se comunicará contigo para explorar alternativas.</p>
+                    <p class="tituloNegado">¡Ups ocurrió un error!</p>
+                    <p class="textoRespuesta">Tuvimos un problema, por favor intenta más tarde.</p>
                 </div>
             </div>
-            <div *ngSwitchDefault></div>
         </div>
     </div>
     <hr>
