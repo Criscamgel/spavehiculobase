@@ -14,8 +14,6 @@ export class ScanparamsService {
               ) { }
 
   getParam() {
-    // tslint:disable-next-line: no-debugger
-    debugger;
     this.route.queryParams.subscribe((data: any) => {
       if (data.roisense && data.roisense.length === 6) {
         this.roisense = data.roisense;
