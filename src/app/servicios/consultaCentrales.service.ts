@@ -63,12 +63,15 @@ export class ConsultaCentralesService {
    }
 
   autenticando() {
-
     this.scanParams.enriquecido = false;
     const bodyT = {
       Username: this.const.username,
       Password: this.const.password
     };
+
+    if (this.scanParams.roisense) {
+      this.contactoCentrales.OtrosDatos.InfoDos = this.scanParams.roisense;
+    }
 
     const body = new HttpParams({fromObject: bodyT});
 

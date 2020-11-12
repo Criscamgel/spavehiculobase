@@ -8,15 +8,17 @@ import { ConsultaCentralesService } from './consultaCentrales.service';
 export class ScanparamsService {
 
   enriquecido = false;
+  roisense;
+  roisenseBool = false;
 
-  constructor(private route: ActivatedRoute,
-              private consultaCentrales: ConsultaCentralesService
+  constructor(private route: ActivatedRoute
               ) { }
 
   getParam() {
     this.route.queryParams.subscribe((data: any) => {
       if (data.roisense && data.roisense.length === 6) {
-        this.consultaCentrales.contactoCentrales.OtrosDatos.InfoDos = data.roisense;
+        this.roisense = data.roisense;
+        this.roisenseBool = true;
       }
     });
 
