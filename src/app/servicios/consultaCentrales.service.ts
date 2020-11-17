@@ -31,7 +31,7 @@ export class ConsultaCentralesService {
       ValorFinanciar: null,
       UsuarioRadica: 'd.avendanom',
       ConcesionarioRadicacion: 179,
-      IdentificacionVendedor: 999,
+      IdentificacionVendedor: 121,
       Marca: 14,
       InfoDos: ''
     }
