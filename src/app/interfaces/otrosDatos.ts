@@ -7,4 +7,5 @@ export interface OtrosDatos {
     IdentificacionVendedor: Number;
     Marca: Number;
     InfoDos?: string;
+    InfoUno?: string;
 }

@@ -29,9 +29,9 @@ export class ConsultaCentralesService {
       AutorizaConsultaCentrales: false,
       AutorizaMareigua: false,
       ValorFinanciar: null,
-      UsuarioRadica: 'd.avendanom',
+      UsuarioRadica: null,
       ConcesionarioRadicacion: 179,
-      IdentificacionVendedor: 121,
+      IdentificacionVendedor: 999,
       Marca: 14,
       InfoDos: ''
     }
@@ -64,14 +64,30 @@ export class ConsultaCentralesService {
 
   autenticando() {
     this.scanParams.enriquecido = false;
+    if (this.scanParams.utm) {
+      this.contactoCentrales.OtrosDatos.InfoUno = this.scanParams.utm;
+    }
+    if (this.scanParams.idc) {
+      this.contactoCentrales.OtrosDatos.IdentificacionVendedor = this.scanParams.idc;
+    }
+    if (this.scanParams.idv) {
+      this.contactoCentrales.OtrosDatos.IdentificacionVendedor = this.scanParams.idv;
+    }
+    if (this.scanParams.roisense) {
+      this.contactoCentrales.OtrosDatos.InfoDos = this.scanParams.roisense;
+    }
+
+    if (this.scanParams.roisenseBool) {
+      this.contactoCentrales.OtrosDatos.ConcesionarioRadicacion = 433;
+    } else {
+      this.contactoCentrales.OtrosDatos.ConcesionarioRadicacion = 99;
+    }
+
     const bodyT = {
       Username: this.const.username,
       Password: this.const.password
     };
 
-    if (this.scanParams.roisense) {
-      this.contactoCentrales.OtrosDatos.InfoDos = this.scanParams.roisense;
-    }
 
     const body = new HttpParams({fromObject: bodyT});
 
