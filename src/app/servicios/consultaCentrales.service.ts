@@ -68,7 +68,7 @@ export class ConsultaCentralesService {
       this.contactoCentrales.OtrosDatos.InfoUno = this.scanParams.utm;
     }
     if (this.scanParams.idc) {
-      this.contactoCentrales.OtrosDatos.IdentificacionVendedor = this.scanParams.idc;
+      this.contactoCentrales.OtrosDatos.ConcesionarioRadicacion = this.scanParams.idc;
     }
     if (this.scanParams.idv) {
       this.contactoCentrales.OtrosDatos.IdentificacionVendedor = this.scanParams.idv;
