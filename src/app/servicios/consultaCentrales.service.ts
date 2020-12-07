@@ -27,7 +27,7 @@ export class ConsultaCentralesService {
     },
     OtrosDatos: {
       AutorizaConsultaCentrales: false,
-      AutorizaMareigua: false,
+      AutorizaMareigua: true,
       ValorFinanciar: null,
       UsuarioRadica: null,
       ConcesionarioRadicacion: 179,

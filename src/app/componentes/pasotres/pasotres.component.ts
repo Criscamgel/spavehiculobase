@@ -38,7 +38,6 @@ export class PasotresComponent {
     this.consultaCentrales.observableAutenticar.subscribe((value: number) => {
       
       if (value === 1) {
-      /* this.editable = false; */
       if (this.consultaCentrales.contactoCentrales.DatosFinancieros.ActividadEconomica) {
         if (this.consultaCentrales.contactoCentrales.DatosFinancieros.ActividadEconomica === 1) {
             this.consultaCentrales.contactoCentrales.DatosFinancieros.ActividadEconomica = 1;
