@@ -31,8 +31,8 @@ export class ConsultaCentralesService {
       ValorFinanciar: null,
       UsuarioRadica: null,
       ConcesionarioRadicacion: 179,
-      IdentificacionVendedor: 999,
-      Marca: 14,
+      IdentificacionVendedor: null,
+      Marca: null,
       InfoDos: ''
     }
   };
