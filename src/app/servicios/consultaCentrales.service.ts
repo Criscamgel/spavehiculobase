@@ -30,7 +30,7 @@ export class ConsultaCentralesService {
       AutorizaMareigua: true,
       ValorFinanciar: null,
       UsuarioRadica: null,
-      ConcesionarioRadicacion: 179,
+      ConcesionarioRadicacion: 99,
       IdentificacionVendedor: null,
       Marca: null,
       InfoDos: ''
@@ -79,7 +79,9 @@ export class ConsultaCentralesService {
 
     if (this.scanParams.roisenseBool) {
       this.contactoCentrales.OtrosDatos.ConcesionarioRadicacion = 433;
-    } else {
+    }
+
+    if (!this.scanParams.roisense && !this.scanParams.idc) {
       this.contactoCentrales.OtrosDatos.ConcesionarioRadicacion = 99;
     }
 

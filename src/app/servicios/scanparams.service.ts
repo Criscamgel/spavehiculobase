@@ -21,6 +21,8 @@ export class ScanparamsService {
       if (data.roisense && data.roisense.length === 6) {
         this.roisense = data.roisense;
         this.roisenseBool = true;
+      } else {
+        this.roisenseBool = false;
       }
       if (data.fuente === 'enriquecido') {
         this.enriquecido = true;
