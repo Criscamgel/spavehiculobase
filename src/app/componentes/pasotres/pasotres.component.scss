@@ -3,7 +3,6 @@
 .contenedor{
     display: grid;
     grid-template-rows: auto;
-    height: 65vh;
     mat-spinner{
         grid-column: 1;
         grid-row: 1;
@@ -18,7 +17,7 @@
 }
 
 .contRespuesta{
-    height: 45vh;
+    min-height: 45vh;
     display: grid;
     padding: 10px;
     text-align: center;

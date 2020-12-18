@@ -7,6 +7,7 @@
     <hr>
 
     <div class="contRespuesta">
+        <div [@animationFadeOut]="resultado">
             <!-- Respuesta Preaprobado No enriquecido -->
 
             <div *ngIf="resultado == 2 && !scanParams.enriquecido && (variantePreaprobado == 2 || variantePreaprobado == 21 || variantePreaprobado == 22)">
