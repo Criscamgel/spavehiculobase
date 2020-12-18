@@ -58,6 +58,8 @@ export class PasodosComponent {
     this.segundo.controls['actividadEconomica'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.DatosFinancieros.ActividadEconomica = value);
     this.segundo.controls['ingresoMensual'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.DatosFinancieros.IngresoMensual = value);
     this.segundo.controls['autorizaConsultaCentrales'].valueChanges.subscribe(value => this.consultaCentrales.contactoCentrales.OtrosDatos.AutorizaConsultaCentrales = value);
+
+    this.segundo.controls['tipoDocumento'].setValue(1);
    }
 
    get nombreNovalido() {
