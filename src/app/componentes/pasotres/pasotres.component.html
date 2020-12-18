@@ -7,22 +7,6 @@
     <hr>
 
     <div class="contRespuesta">
-        <div [@animationFadeOut]="resultado">
-            <div *ngIf="resultado == 2 && !scanParams.enriquecido"><!-- Preaprobado -->
-                <div class="contRespuesta">
-                    <img [src]="const.aprobado" alt="">
-                    <p class="tituloAprobado">¡Tu solicitud es viable!</p>
-                    <p class="textoRespuesta">Pronto uno de nuestros asesores se comunicará contigo para continuar la solicitud de crédito.</p>
-                </div>
-            </div>
-            <div *ngIf="resultado == 2 && scanParams.enriquecido"><!-- Preaprobado -->
-                <div class="contRespuesta">
-                    <img [src]="const.aprobado" alt="">
-                    <p class="tituloAprobado">¡Tu solicitud es viable!</p>
-                    <p class="textoRespuesta">¡Felicitaciones! Tu crédito es viable. Estás a un click de tener carro, chatea con tu asesor personalizado haciendo click en el botón o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
-                </div>
-            </div>
-
             <!-- Respuesta Preaprobado No enriquecido -->
 
             <div *ngIf="resultado == 2 && !scanParams.enriquecido && (variantePreaprobado == 2 || variantePreaprobado == 21 || variantePreaprobado == 22)">
