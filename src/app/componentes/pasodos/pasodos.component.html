@@ -129,15 +129,16 @@
   
             </div>          
             <hr>
-          <div class="piepaso">
-            <button
-            color="primary"
-            mat-button
-            matStepperNext
-            (click)="consultaCentrales.autenticando(); scanparamsService.getParam()"
-            [disabled] = "segundo.invalid"
-            >CONTINUAR<mat-icon>arrow_right_icon</mat-icon></button>
-        </div>
-
+            <div class="contBotonPaso">
+                <div class="piepaso">
+                    <button
+                    color="primary"
+                    mat-button
+                    matStepperNext
+                    (click)="consultaCentrales.autenticando(); scanparamsService.getParam()"
+                    [disabled] = "segundo.invalid"
+                    >CONTINUAR<mat-icon>arrow_right_icon</mat-icon></button>
+                </div>
+            </div>
     </form>
 </div>

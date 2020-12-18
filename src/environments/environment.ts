@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  urlA: "https://apitst.premiercredit.co:11445/PremierServices_api_ext_tst/api/login/authenticate",
-  urlV: "https://apitst.premiercredit.co:11445/premierservices_api_ext_tst/api/viabilizacion/getViabilizacion"
+  /* urlA: "https://apitst.premiercredit.co:11445/PremierServices_api_ext_tst/api/login/authenticate",
+  urlV: "https://apitst.premiercredit.co:11445/premierservices_api_ext_tst/api/viabilizacion/getViabilizacion" */
+  urlA: "https://api.premiercredit.co:11444/PremierServices_API_EXT/api/login/authenticate",
+  urlV: "https://api.premiercredit.co:11444/premierservices_api_ext/api/viabilizacion/getViabilizacionModular"
 };
 
 /*

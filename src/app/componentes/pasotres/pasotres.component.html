@@ -19,7 +19,7 @@
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
                     <p class="tituloAprobado">¡Tu solicitud es viable!</p>
-                    <p class="textoRespuesta">¡Felicitaciones! Tu crédito es viable. Estás a un click de tener carro, chatea con tu asesor personalizado haciendo <a class="pointer whatsapp" href="https://cariai.com/santanderdigitalchannel/santanderdigitalchannel">click aquí <i class="fa fa-whatsapp" aria-hidden="true"></i></a> o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
+                    <p class="textoRespuesta">¡Felicitaciones! Tu crédito es viable. Estás a un click de tener carro, chatea con tu asesor personalizado haciendo click en el botón o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
                 </div>
             </div>
             <div *ngIf="resultado == 3 && !scanParams.enriquecido"><!-- Aprobado con documentos -->
@@ -33,7 +33,7 @@
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
                     <p class="tituloAprobado">¡Tu solicitud es viable!</p>
-                    <p class="textoRespuesta">¡Felicitaciones! Tu crédito es viable. Estás a un click de tener carro, chatea con tu asesor personalizado haciendo <a class="pointer whatsapp" href="https://cariai.com/santanderdigitalchannel/santanderdigitalchannel">click aquí <i class="fa fa-whatsapp" aria-hidden="true"></i></a> o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
+                    <p class="textoRespuesta">¡Felicitaciones! Tu crédito es viable. Estás a un click de tener carro, chatea con tu asesor personalizado haciendo click en el botón o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
                 </div>
             </div>
             <div *ngIf="resultado == 4 && !scanParams.enriquecido"><!-- Aprobado sin documentos -->
@@ -47,7 +47,7 @@
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
                     <p class="tituloAprobado">Tu solicitud ya está en proceso</p>
-                    <p class="textoRespuesta">Chatea con tu asesor personalizado haciendo <a class="pointer whatsapp" href="https://cariai.com/santanderdigitalchannel/santanderdigitalchannel">click aquí <i class="fa fa-whatsapp" aria-hidden="true"></i></a> o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
+                    <p class="textoRespuesta">Chatea con tu asesor personalizado haciendo click en el botón o escribiéndonos vía Whatsapp a nuestra cuenta oficial +57 1 7443592</p>
                 </div>
             </div>
             <div *ngIf="resultado == 1"><!-- Negado -->
@@ -67,13 +67,31 @@
         </div>
     </div>
     <hr>
-    <div *ngIf="resultado" [@animationFadeOut]="resultado" class="piepaso">
+    <div class="contBotonPaso">
+    <div *ngIf="resultado && sendMail" [@animationFadeOut]="resultado" class="piepaso" id="mail">
+        <button
+        color="primary"
+        mat-button
+        matStepperNext
+        >Enviar email</button>
+      </div>
+    <div *ngIf="resultado && sendWhatsapp" [@animationFadeOut]="resultado" class="piepaso" id="wsp">
         <button
         color="primary"
         (click)="gotoReferrer()"
         mat-button
         matStepperNext
+        >Chatea con tu asesor</button>
+      </div>
+    <div *ngIf="resultado" [@animationFadeOut]="resultado" class="piepaso">
+        <button
+        color="primary"
+        id="finalizar"
+        (click)="gotoReferrer()"
+        mat-button
+        matStepperNext
         >FINALIZAR<mat-icon>arrow_right_icon</mat-icon></button>
+      </div>
       </div>
     </div>
 
