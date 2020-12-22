@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: $margenContenido auto $margenContenido;
     border-bottom: 3px solid $colorPrimario;
-    background-color: white;
+    background-color: #000000;
     @include tabletLaptop(){
         grid-template-columns: $margenContenido auto 55%;
     }
@@ -18,7 +18,7 @@
         img{
             width: 30%;
             @include tabletLaptop(){
-                width: 25%;
+                width: 38%;
             }
         }
     }

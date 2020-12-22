@@ -28,6 +28,7 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 
 .mat-horizontal-stepper-header .mat-step-icon-selected{
     background-color: $colorPrimario !important;
+    color: $colorSecundario !important;
 }
 
 .mat-step-icon{
@@ -224,4 +225,8 @@ $my-app-theme: mat-light-theme($my-app-accent, $my-app-accent);
 
 select.mat-input-element:not(:disabled) {
     font-size: 12px !important;
+}
+
+.mat-step-header .mat-step-icon{
+    color: $colorPrimario;
 }
