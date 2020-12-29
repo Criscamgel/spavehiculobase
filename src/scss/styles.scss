@@ -238,3 +238,19 @@ button#finalizar {
 select.mat-input-element:not(:disabled) {
     font-size: 12px !important;
 }
+
+.noBig{
+    @include tabletLaptop{
+        display: none;
+    }
+    @include laptopDesktop{
+        display: none;
+    }
+    @include desktopFull{
+        display: none;
+    }
+    @include full{
+        display: none;
+    }
+
+}
