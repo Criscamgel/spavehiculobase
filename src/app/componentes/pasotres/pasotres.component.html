@@ -39,7 +39,7 @@
             <div *ngIf="resultado == 2 && scanParams.enriquecido && variantePreaprobado == 21">
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
-                    <p class="tituloAprobado">¡Estás muy cerca de tener tu crédito aprobado! Para lograrlo debes enviar un correo a digitalcanal@santanderconsumer.co con los siguientes documentos:</p>
+                    <p class="tituloAprobado">¡Estás muy cerca de tener tu crédito aprobado! Para lograrlo debes enviar un correo a digital@santanderconsumer.co con los siguientes documentos:</p>
                     <p class="textoRespuesta">1) Si eres empleado (permanente, por prestación de servicios o por obra/labor): Debes haber trabajado los últimos 12 meses, y debes enviar el/los certificado(s) que lo demuestren<br><br>
                         2) Si eres independiente: Debes tener una trayectoria de al menos 2 años, y debes enviar Cámara de Comercio ó RUT, extractos bancarios de los últimos 3 meses y dos referencias comerciales (cartas de tus proveedores o clientes indicando tiempo de la relación y monto promedio de los pagos)</p>
                 </div>
@@ -56,7 +56,7 @@
             <div *ngIf="resultado == 2 && scanParams.enriquecido && (variantePreaprobado == 24 || variantePreaprobado == 25)">
                 <div class="contRespuesta">
                     <img [src]="const.aprobado" alt="">
-                    <p class="tituloAprobado">¡Estás muy cerca de tener tu crédito aprobado! Para lograrlo debes enviar un correo a digitalcanal@santanderconsumer.co con los siguientes documentos:</p>
+                    <p class="tituloAprobado">¡Estás muy cerca de tener tu crédito aprobado! Para lograrlo debes enviar un correo a digital@santanderconsumer.co con los siguientes documentos:</p>
                     <p class="textoRespuesta"> 1) Si eres empleado (permanente, por prestación de servicios o por obra/labor): Debes haber trabajado los últimos 12 meses, y debes enviar el/los certificado(s) que lo demuestren<br><br>
                         2) Si eres independiente: Debes tener una trayectoria de al menos 2 años, y debes enviar Cámara de Comercio ó RUT, extractos bancarios de los últimos 3 meses y dos referencias comerciales (cartas de tus proveedores o clientes indicando tiempo de la relación y monto promedio de los pagos)</p>
                 </div>
@@ -110,7 +110,7 @@
     <hr>
     <div class="contBotonPaso">
     <div *ngIf="resultado && sendMail" [@animationFadeOut]="resultado" class="piepaso" id="mail">
-        <a href="mailto:digitalcanal@santanderconsumer.co?subject=Soy-preaprobado">
+        <a href="mailto:digital@santanderconsumer.co?subject=Soy-preaprobado">
             <button
             color="primary"
             mat-button
