@@ -65,6 +65,10 @@ export class PasounoComponent {
     this.primero.controls['cuotaInicial'].valueChanges.subscribe( () => { 
       this.makeValorTotal(this.consultaCentrales.contactoCentrales.DatosBasicos.ValorVehiculo, Number(this.primero.controls['cuotaInicial'].value));
     });
+
+    this.primero.controls['modelo'].valueChanges.subscribe( value => { 
+      this.consultaCentrales.contactoCentrales.DatosVehiculo.Modelo = value;
+    });
   }
 
   makeCuotaInicial(){
