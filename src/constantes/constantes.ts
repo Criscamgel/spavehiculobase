@@ -1,7 +1,12 @@
 const nombreCliente = "Santander Consumer"
 
 export const Constantes = {
-    periodos: [48, 60, 72, 84],
+    periodos: [ 
+                {value: 4, name: 48},
+                {value: 5, name: 60},
+                {value: 6, name: 72},
+                {value: 7, name: 84}
+            ],
     minimo: 20000000,
     precioMinimo: 40000000,
     valorMinIngreso: 1200000,
@@ -26,6 +31,23 @@ export const Constantes = {
         {value: 2, name: 'Cédula de Extranjería'},
         {value: 3, name: 'NIT'}
     ],
+
+    modelos: [
+        {value:0, name:"Selecciona el modelo"},
+        {value:6, name:"2010"},
+        {value:7, name:"2011"},
+        {value:8, name:"2012"},
+        {value:9, name:"2013"},
+        {value:10, name:"2014"},
+        {value:11, name:"2015"},
+        {value:12, name:"2016"},
+        {value:13, name:"2017"},
+        {value:14, name:"2018"},
+        {value:15, name:"2019"},
+        {value:16, name:"2020"},
+        {value:17, name:"2021"},
+        {value:18, name:"2022"}
+       ],
 
     username: "santander",    
     password: "bs4n4p1",

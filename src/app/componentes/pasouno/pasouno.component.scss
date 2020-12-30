@@ -74,3 +74,13 @@
     } 
     
   }
+
+  .contCampoDos{
+    
+    @include tabletLaptop(){
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: 1fr;
+        grid-column-gap: 5px;
+    }
+}

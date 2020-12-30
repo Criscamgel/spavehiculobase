@@ -254,3 +254,9 @@ select.mat-input-element:not(:disabled) {
     }
 
 }
+
+p.inputError {
+    color: red;
+    font-size: 10px;
+    padding-left: 12px;
+}

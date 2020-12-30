@@ -26,6 +26,7 @@ export class PasounoComponent {
 
   primero: FormGroup;
   const = Constantes;
+  porcentaje: number = 0;
   /* cuota: number = 0; */
 
   constructor( public formBuilder: FormBuilder, public consultaCentrales: ConsultaCentralesService, public respuestaCalculadora: RespuestaCalculadoraService ) {
@@ -35,8 +36,10 @@ export class PasounoComponent {
 
   crearFormulario() {
     this.primero = this.formBuilder.group({
-      monto: ['', [Validators.required, Validators.min(this.const.minimo)]],
       precio: ['', [Validators.required, Validators.min(this.const.precioMinimo)]],
+      modelo: ['', [Validators.required]],
+      cuotaInicial: ['', [Validators.required]],
+      monto: ['', [Validators.required, Validators.min(this.const.minimo)]],
       periodo: ['', Validators.required],
       cuota: [0, Validators.required]
     });
@@ -51,11 +54,36 @@ export class PasounoComponent {
 
     this.primero.controls['precio'].valueChanges.subscribe( value => {
       this.consultaCentrales.contactoCentrales.DatosBasicos.ValorVehiculo = value;
+      this.makeCuotaInicial();
     });
 
     this.primero.controls['periodo'].valueChanges.subscribe( () => {
         this.primero.controls['cuota'].setValue(this.respuestaCalculadora.calcularCuota(this.primero.get('periodo').value, this.primero.get('monto').value));
+        this.consultaCentrales.contactoCentrales.DatosBasicos.Plazo = Number(this.primero.controls['periodo'].value);
     });
+
+    this.primero.controls['cuotaInicial'].valueChanges.subscribe( () => { 
+      this.makeValorTotal(this.consultaCentrales.contactoCentrales.DatosBasicos.ValorVehiculo, Number(this.primero.controls['cuotaInicial'].value));
+    });
+  }
+
+  makeCuotaInicial(){
+    this.consultaCentrales.contactoCentrales.DatosBasicos.CuotaInicial = this.primero.controls['precio'].value * 0.1;
+    this.primero.controls['cuotaInicial'].setValue(this.primero.controls['precio'].value * 0.1);
+    this.calculaPorcentaje();
+    this.makeValorTotal(this.consultaCentrales.contactoCentrales.DatosBasicos.ValorVehiculo, this.consultaCentrales.contactoCentrales.DatosBasicos.CuotaInicial);
+
+}
+
+  makeValorTotal(valorVehiculo, cuotaInicial){
+    this.consultaCentrales.contactoCentrales.OtrosDatos.ValorFinanciar = valorVehiculo - cuotaInicial;
+    this.primero.controls['monto'].setValue(valorVehiculo - cuotaInicial);
+    this.calculaPorcentaje();
+
+  }
+
+  calculaPorcentaje(){
+    this.porcentaje = (Number(this.primero.controls['cuotaInicial'].value) * 100) / this.primero.controls['precio'].value;
   }
 
   statusCambia() {
@@ -69,6 +97,14 @@ export class PasounoComponent {
   }
   get precioNoValido() {
     return this.primero.get('precio').invalid && this.primero.get('precio').touched;
+  }
+
+  get cuotaInicialNoValido() {
+    return this.primero.get('cuotaInicial').invalid && this.primero.controls['cuotaInicial'].touched;
+  }
+
+  get cuotaInicialMayor(){
+    return Number(this.primero.get('cuotaInicial').value) > Number(this.primero.get('precio').value);
   }
 
 }

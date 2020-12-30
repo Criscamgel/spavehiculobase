@@ -7,18 +7,9 @@
 
     <form [formGroup]="primero">
 
-        <mat-label>¿Cuánto dinero necesitas financiar?</mat-label>
-        <mat-form-field appearance="outline" class="full-width">
-            <input 
-            currencyMask
-            type="tel"
-            matInput
-            [options]="{ align: 'left', prefix: '$ ', suffix: '', thousands: '.', decimal: ',', precision: 0 }" 
-            formControlName="monto"
-            >
-            <mat-error *ngIf="montoNoValido">Debes diligenciar mínimo $ {{const.minimo | number:'1.0':'es'}}</mat-error>
-        </mat-form-field>
-
+        <div id="segundo" class="contCampoDos"> 
+        
+        <div>
         <mat-label>¿Cuál es el precio del vehiculo?</mat-label>
         <mat-form-field appearance="outline" class="full-width">
             <input 
@@ -28,8 +19,55 @@
             [options]="{ align: 'left', prefix: '$ ', suffix: '', thousands: '.', decimal: ',', precision: 0 }" 
             formControlName="precio"
             >
-            <mat-error *ngIf="precioNoValido">Debes diligenciar mínimo $ {{const.precioMinimo | number:'1.0':'es'}}</mat-error>
+            <mat-error *ngIf="precioNoValido">Debes diligenciar mínimo $ {{ const.precioMinimo | number:'1.0':'es'}}</mat-error>
         </mat-form-field>
+        </div>
+
+        <div>
+        <mat-label>Modelo del carro</mat-label>
+        <mat-form-field id="dobleInput" class="full-width" appearance="outline">
+            <mat-label>Modelo del carro</mat-label>
+            <select 
+                matNativeControl
+                formControlName="modelo"
+            >
+                <option 
+                *ngFor="let obj of const.modelos" 
+                [ngValue]="obj.value" 
+                [disabled]="obj.value == 0"
+                required
+                >
+                {{obj.name}}</option>
+            </select>                
+            <mat-error *ngIf="tipoIdNoValido">Elige una opción</mat-error>
+        </mat-form-field>
+        </div>
+
+        </div>
+
+        <mat-label>Cuota inicial</mat-label> ({{ porcentaje }}%)
+        <mat-form-field appearance="outline" class="full-width">
+            <input 
+            currencyMask
+            type="tel"
+            matInput
+            [options]="{ align: 'left', prefix: '$ ', suffix: '', thousands: '.', decimal: ',', precision: 0 }" 
+            formControlName="cuotaInicial"
+            >
+            <mat-error *ngIf="cuotaInicialNoValido">Debes diligenciar mínimo $ {{ primero.controls['precio'].value | number:'1.0':'es'}}</mat-error>    
+        </mat-form-field>
+        <p class="inputError" *ngIf="cuotaInicialMayor">Debes diligenciar máximo $ {{ primero.controls['precio'].value | number:'1.0':'es'}}</p>
+
+        <mat-label>¿Cuánto dinero necesitas financiar?</mat-label>
+        <mat-form-field appearance="outline" class="full-width">
+            <input 
+            currencyMask
+            type="tel"
+            matInput
+            [options]="{ align: 'left', prefix: '$ ', suffix: '', thousands: '.', decimal: ',', precision: 0 }" 
+            formControlName="monto"
+            >
+            <mat-error *ngIf="montoNoValido">Debes diligenciar mínimo $ {{const.minimo | number:'1.0':'es'}}</mat-error>        </mat-form-field>
 
         <mat-label>¿A cuántos meses quieres pagar?</mat-label>
         <div class="radiogrupo">
@@ -37,10 +75,10 @@
                 <input 
                 type="radio" 
                 name="periodo" 
-                [value]="periodo" 
+                [value]="periodo.value" 
                 formControlName="periodo"
                 >
-                <div class="mes">{{periodo}} meses</div>
+                <div class="mes">{{periodo.name}} meses</div>
             </span>
         </div>
 
@@ -66,7 +104,7 @@
             mat-button
             color="primary"
             class="btnPrimario" 
-            [disabled]="primero.invalid"
+            [disabled]="primero.invalid || cuotaInicialNoValido"
             (click)="consultaCentrales.primeroCompleto = true" 
             matStepperNext>CONTINUAR <mat-icon>arrow_right_icon</mat-icon></button>
         </div>

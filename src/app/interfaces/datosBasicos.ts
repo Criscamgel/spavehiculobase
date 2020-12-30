@@ -5,4 +5,6 @@ export interface DatosBasicos {
     NumeroDocumento: String;
     Celular: String;
     CorreoPersonal: String;
+    CuotaInicial: number;
+    Plazo: number
 }

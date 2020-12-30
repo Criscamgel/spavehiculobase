@@ -18,7 +18,9 @@ export class ConsultaCentralesService {
       Nombre: null,
       ValorVehiculo: null,
       Celular: null,
-      CorreoPersonal: null
+      CorreoPersonal: null,
+      CuotaInicial: null,
+      Plazo: null
     },
     DatosFinancieros: {
       ActividadEconomica: null,
@@ -33,7 +35,12 @@ export class ConsultaCentralesService {
       ConcesionarioRadicacion: 99,
       IdentificacionVendedor: null,
       Marca: null,
-      InfoDos: ''
+      InfoDos: '',
+      InfoTres: ''
+    },
+    DatosVehiculo:{
+      Modelo: null,
+      TipoVehiculo: 2
     }
   };
 
@@ -97,6 +104,7 @@ export class ConsultaCentralesService {
     .subscribe((resp: any) => {
            this.token = resp.Token;
            this.autenticar = resp.Status;
+           this.contactoCentrales.OtrosDatos.InfoTres = this.linkOrigen;
 
            this.headerVi = {
             'Content-Type': 'application/json',
