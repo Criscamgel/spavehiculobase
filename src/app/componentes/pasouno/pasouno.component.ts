@@ -107,4 +107,8 @@ export class PasounoComponent {
     return Number(this.primero.get('cuotaInicial').value) > Number(this.primero.get('precio').value);
   }
 
+  get tipoIdNoValido() {
+    return this.primero.get('modelo').invalid && this.primero.get('modelo').touched;
+  }
+
 }
