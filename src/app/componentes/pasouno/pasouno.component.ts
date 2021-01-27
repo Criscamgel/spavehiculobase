@@ -59,7 +59,7 @@ export class PasounoComponent {
 
     this.primero.controls['periodo'].valueChanges.subscribe( () => {
         this.primero.controls['cuota'].setValue(this.respuestaCalculadora.calcularCuota(this.primero.get('periodo').value, this.primero.get('monto').value));
-        this.consultaCentrales.contactoCentrales.DatosBasicos.Plazo = Number(this.primero.controls['periodo'].value);
+        this.consultaCentrales.contactoCentrales.DatosBasicos.Plazo = this.aniosPeriodo(this.primero.get('periodo').value);
     });
 
     this.primero.controls['cuotaInicial'].valueChanges.subscribe( () => { 
@@ -94,6 +94,32 @@ export class PasounoComponent {
     this.primero.statusChanges.subscribe(val => {
       val === 'VALID' ? this.consultaCentrales.primeroCompleto = true : this.consultaCentrales.primeroCompleto = false;
     });
+  }
+
+  aniosPeriodo( value ){
+    switch (value) {
+      case 48: 
+        value = 4;
+        break;
+
+      case 60: 
+        value = 5;
+        break;
+
+      case 72: 
+        value = 6;
+        break;
+
+      case 84: 
+        value = 7;
+        break;
+    
+      default:
+        break;
+    }
+
+    return value.toString();
+
   }
 
   get montoNoValido() {

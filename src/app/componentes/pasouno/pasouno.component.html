@@ -45,7 +45,7 @@
 
         </div>
 
-        <mat-label>Cuota inicial</mat-label> ({{ porcentaje }}%)
+        <mat-label>Cuota inicial <b>({{ porcentaje }}%)</b></mat-label>
         <mat-form-field appearance="outline" class="full-width">
             <input 
             currencyMask
@@ -75,7 +75,7 @@
                 <input 
                 type="radio" 
                 name="periodo" 
-                [value]="periodo.value" 
+                [value]="periodo.name" 
                 formControlName="periodo"
                 >
                 <div class="mes">{{periodo.name}} meses</div>
