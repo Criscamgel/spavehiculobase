@@ -54,9 +54,7 @@
             [options]="{ align: 'left', prefix: '$ ', suffix: '', thousands: '.', decimal: ',', precision: 0 }" 
             formControlName="cuotaInicial"
             >
-            <mat-error *ngIf="cuotaInicialNoValido">Debes diligenciar mínimo $ {{ primero.controls['precio'].value | number:'1.0':'es'}}</mat-error>    
         </mat-form-field>
-        <p class="inputError" *ngIf="cuotaInicialMayor">Debes diligenciar máximo $ {{ primero.controls['precio'].value | number:'1.0':'es'}}</p>
 
         <mat-label>¿Cuánto dinero necesitas financiar?</mat-label>
         <mat-form-field appearance="outline" class="full-width">
