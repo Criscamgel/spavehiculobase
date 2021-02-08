@@ -8,7 +8,7 @@ export const Constantes = {
                 {value: 7, name: 84}
             ],
     minimo: 20000000,
-    precioMinimo: 40000000,
+    precioMinimo: 20000000,
     valorMinIngreso: 1200000,
     tasa: 0.0115,
     constanteSeguro: 1220 / 1000000,
