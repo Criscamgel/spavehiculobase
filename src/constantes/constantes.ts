@@ -2,8 +2,8 @@ const nombreCliente = "Santander Consumer"
 
 export const Constantes = {
     periodos: [48, 60, 72, 84],
-    minimo: 20000000,
-    precioMinimo: 40000000,
+    minimo: 10000000,
+    precioMinimo: 13000000,
     valorMinIngreso: 1200000,
     tasa: 0.0115,
     constanteSeguro: 1200 / 1000000,
