@@ -67,11 +67,11 @@ export class ConsultaCentralesService {
     this.contactoCentrales.OtrosDatos.ConcesionarioRadicacion = this.scanParams.idc;
 
     const bodyT = {
-      Username: this.const.username,
-      Password: this.const.password
+      UserPass: this.const.userpass
     };
-
+    
     const body = new HttpParams({fromObject: bodyT});
+    
 
     return this.http.post(`${this.env.urlA}`, body, this.options)
     .subscribe((resp: any) => {

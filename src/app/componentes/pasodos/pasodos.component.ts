@@ -36,7 +36,7 @@ export class PasodosComponent {
    crearFormulario() {
     this.segundo = this.formBuilder.group({
       nombre: ['', [Validators.required, Validators.minLength(5)]],
-      tipoDocumento: [null, Validators.required],
+      tipoDocumento: [1, Validators.required],
       numeroDocumento: ['', [Validators.required, Validators.minLength(5)]],
       celular: ['', [Validators.required, Validators.pattern(this.const.patternCel), Validators.maxLength(10), Validators.minLength(10)]],
       correoPersonal: ['', [Validators.required, Validators.pattern(this.const.patternMail), Validators.minLength(10)]],
