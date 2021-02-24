@@ -23,7 +23,7 @@ export const Constantes = {
         {value: 2, name: 'Cédula de Extranjería'},
         {value: 3, name: 'NIT'}
     ],
-    userpass: 'agBhAGcAdQBhAHIAOgBqAEAAZwB1ADQAcgA=',
+    userpass: 'bABhAG4AZABSAG8AdgBlAHIAOgBsADQAbgBkAHIAMAB2ADMAcgA=',
     tyc: {
         titulo: "TERMINOS Y CONDICIONES PORTAL Santander Consumer",
         contenido:[
