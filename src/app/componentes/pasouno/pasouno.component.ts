@@ -44,6 +44,8 @@ export class PasounoComponent {
       cuota: [0, Validators.required]
     });
 
+    this.primero.controls['monto'].disable();
+
     /* Subcripción de Resultados */
     this.primero.controls['monto'].valueChanges.subscribe( value => {
       this.consultaCentrales.contactoCentrales.OtrosDatos.ValorFinanciar = value;
@@ -138,7 +140,7 @@ export class PasounoComponent {
   }
 
   get tipoIdNoValido() {
-    return this.primero.get('modelo').invalid && this.primero.get('modelo').touched;
+    return this.primero.get('modelo').invalid || this.primero.get('modelo').touched;
   }
 
 }

@@ -45,7 +45,7 @@
 
         </div>
 
-        <mat-label>Cuota inicial <b>({{ porcentaje }}%)</b></mat-label>
+        <mat-label>Cuota inicial <b>({{ porcentaje | number: '1.0-2' }}%)</b></mat-label>
         <mat-form-field appearance="outline" class="full-width">
             <input 
             currencyMask
