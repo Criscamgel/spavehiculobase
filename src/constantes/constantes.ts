@@ -26,7 +26,7 @@ export const Constantes = {
         {value: 2, name: 'Cédula de Extranjería'},
         {value: 3, name: 'NIT'}
     ],
-    userpass: 'agBhAGcAdQBhAHIAOgBqAEAAZwB1ADQAcgA=',
+    userpass: 'cwBhAG4AdABhAG4AZABlAHIAOgBiAHMANABuADQAcAAxAA==',
     tyc: {
         titulo: `TERMINOS Y CONDICIONES PORTAL ${nombreCliente}`,
         contenido:[
