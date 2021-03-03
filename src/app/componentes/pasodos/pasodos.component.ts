@@ -66,7 +66,7 @@ export class PasodosComponent {
     return this.segundo.get('nombre').invalid && this.segundo.get('nombre').touched;
   }
   get tipoIdNoValido() {
-    return this.segundo.get('tipoDocumento').invalid && this.segundo.get('tipoDocumento').touched;
+    return this.segundo.get('tipoDocumento').invalid  && this.segundo.get('tipoDocumento').touched;
   }
   get idNoValido() {
     return this.segundo.get('numeroDocumento').invalid && this.segundo.get('numeroDocumento').touched;

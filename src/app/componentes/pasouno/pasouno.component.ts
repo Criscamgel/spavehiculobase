@@ -4,6 +4,7 @@ import { Constantes } from '../../../constantes/constantes';
 import { ConsultaCentralesService } from 'src/app/servicios/consultaCentrales.service';
 import { RespuestaCalculadoraService } from 'src/app/servicios/respuestaCalculadora.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { TouchedErrorStateMatcher } from '../shared/touchedErrorStateMatcher';
 
 @Component({
   selector: 'app-pasouno',
@@ -27,6 +28,7 @@ export class PasounoComponent {
   primero: FormGroup;
   const = Constantes;
   porcentaje: number = 0;
+  matcher = new TouchedErrorStateMatcher;
   /* cuota: number = 0; */
 
   constructor( public formBuilder: FormBuilder, public consultaCentrales: ConsultaCentralesService, public respuestaCalculadora: RespuestaCalculadoraService ) {
@@ -140,7 +142,7 @@ export class PasounoComponent {
   }
 
   get tipoIdNoValido() {
-    return this.primero.get('modelo').invalid || this.primero.get('modelo').touched;
+    return this.primero.controls['modelo'].value == 0 || this.primero.controls['modelo'].value == "";
   }
 
 }
